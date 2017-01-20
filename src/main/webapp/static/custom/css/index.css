@@ -1,0 +1,28 @@
+/**
+ * 首页相关样式定义
+ * Created by HJK on 2017-01-17 11:32:35
+ */
+
+/*左侧菜单栏样式*/
+.fixed-nav-left{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 66;
+    min-height: 100%;
+}
+
+/*通用样式*/
+.margin-bottom{
+    margin-bottom:15px;
+}
+.margin-top{
+    margin-top: 15px;
+}
+.padding-top{
+    padding-top:15px;
+}
+.border-top{
+    border-top:1px solid #e7eaec;
+}

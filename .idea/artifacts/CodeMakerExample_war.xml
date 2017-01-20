@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="CodeMakerExample:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="codemaker-example.war">
+      <element id="artifact" artifact-name="CodeMakerExample:war exploded" />
+    </root>
+  </artifact>
+</component>

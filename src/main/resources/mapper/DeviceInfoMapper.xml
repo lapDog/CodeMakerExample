@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="indi.hjk.codemakerexample.dao.DeviceInfoMapper" >
+<!-- Mapping relation, table field, query condition and Sql block start. -->
+	<!-- Result Map-->
+	<resultMap id="BaseResultMap" type="indi.hjk.codemakerexample.entity.DeviceInfo" >
+		<result column="id" property="id" jdbcType="INTEGER"/>
+		<result column="dev_id" property="dev_id" jdbcType="VARCHAR"/>
+		<result column="dev_nickname" property="dev_nickname" jdbcType="VARCHAR"/>
+		<result column="dev_company" property="dev_company" jdbcType="INTEGER"/>
+		<result column="dev_ip" property="dev_ip" jdbcType="VARCHAR"/>
+		<result column="dev_port" property="dev_port" jdbcType="INTEGER"/>
+		<result column="dev_username" property="dev_username" jdbcType="VARCHAR"/>
+		<result column="dev_password" property="dev_password" jdbcType="VARCHAR"/>
+		<result column="proxy_port" property="proxy_port" jdbcType="INTEGER"/>
+		<result column="proxy_status" property="proxy_status" jdbcType="VARCHAR"/>
+		<result column="stat" property="stat" jdbcType="INTEGER"/>
+		<result column="extend_1" property="extend_1" jdbcType="INTEGER"/>
+		<result column="extend_2" property="extend_2" jdbcType="VARCHAR"/>
+		<result column="stream_type" property="stream_type" jdbcType="INTEGER"/>
+		<result column="conn_type" property="conn_type" jdbcType="INTEGER"/>
+		<result column="frame_height" property="frame_height" jdbcType="INTEGER"/>
+		<result column="frame_width" property="frame_width" jdbcType="INTEGER"/>
+		<result column="frame_rate" property="frame_rate" jdbcType="INTEGER"/>
+		<result column="video_url" property="video_url" jdbcType="VARCHAR"/>
+		<result column="update_date" property="update_date" jdbcType="TIMESTAMP"/>
+	</resultMap>
+
+	<!-- eag_devices_proxy table all fields -->
+	<sql id="Base_Column_List" >
+		id,
+		dev_id,
+		dev_nickname,
+		dev_company,
+		dev_ip,
+		dev_port,
+		dev_username,
+		dev_password,
+		proxy_port,
+		proxy_status,
+		stat,
+		extend_1,
+		extend_2,
+		stream_type,
+		conn_type,
+		frame_height,
+		frame_width,
+		frame_rate,
+		video_url,
+		update_date
+	</sql>
+
+	<!-- Query Criteria -->
+	<sql id="Example_Where_Clause">
+		where 1=1
+		<trim  suffixOverrides=",">
+            <if test="id != null and id != ''">
+                and id = #{id}
+            </if>
+            <if test="dev_id != null and dev_id != ''">
+                and dev_id = #{dev_id}
+            </if>
+            <if test="dev_nickname != null and dev_nickname != ''">
+                and dev_nickname = #{dev_nickname}
+            </if>
+            <if test="dev_company != null and dev_company != ''">
+                and dev_company = #{dev_company}
+            </if>
+            <if test="dev_ip != null and dev_ip != ''">
+                and dev_ip = #{dev_ip}
+            </if>
+            <if test="dev_port != null and dev_port != ''">
+                and dev_port = #{dev_port}
+            </if>
+            <if test="dev_username != null and dev_username != ''">
+                and dev_username = #{dev_username}
+            </if>
+            <if test="dev_password != null and dev_password != ''">
+                and dev_password = #{dev_password}
+            </if>
+            <if test="proxy_port != null and proxy_port != ''">
+                and proxy_port = #{proxy_port}
+            </if>
+            <if test="proxy_status != null and proxy_status != ''">
+                and proxy_status = #{proxy_status}
+            </if>
+            <if test="stat != null and stat != ''">
+                and stat = #{stat}
+            </if>
+            <if test="extend_1 != null and extend_1 != ''">
+                and extend_1 = #{extend_1}
+            </if>
+            <if test="extend_2 != null and extend_2 != ''">
+                and extend_2 = #{extend_2}
+            </if>
+            <if test="stream_type != null and stream_type != ''">
+                and stream_type = #{stream_type}
+            </if>
+            <if test="conn_type != null and conn_type != ''">
+                and conn_type = #{conn_type}
+            </if>
+            <if test="frame_height != null and frame_height != ''">
+                and frame_height = #{frame_height}
+            </if>
+            <if test="frame_width != null and frame_width != ''">
+                and frame_width = #{frame_width}
+            </if>
+            <if test="frame_rate != null and frame_rate != ''">
+                and frame_rate = #{frame_rate}
+            </if>
+            <if test="video_url != null and video_url != ''">
+                and video_url = #{video_url}
+            </if>
+            <if test="update_date_start != null and update_date_start != ''">
+                <![CDATA[ and update_date >= to_date(update_date_start,'yyyy/mm/dd hh24:mi:ss')  ]]>
+            </if>
+			<if test="update_date_end != null and update_date_end != ''">
+            	<![CDATA[ and update_date <= to_date(update_date_end,'yyyy/mm/dd hh24:mi:ss')  ]]>
+        	</if>
+		</trim>
+	</sql>
+
+	<!-- Column Empty Clause -->
+    <sql id="Column_Empty_Clause">
+        <trim  suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="dev_id != null">
+				dev_id,
+			</if>
+			<if test="dev_nickname != null">
+				dev_nickname,
+			</if>
+			<if test="dev_company != null">
+				dev_company,
+			</if>
+			<if test="dev_ip != null">
+				dev_ip,
+			</if>
+			<if test="dev_port != null">
+				dev_port,
+			</if>
+			<if test="dev_username != null">
+				dev_username,
+			</if>
+			<if test="dev_password != null">
+				dev_password,
+			</if>
+			<if test="proxy_port != null">
+				proxy_port,
+			</if>
+			<if test="proxy_status != null">
+				proxy_status,
+			</if>
+			<if test="stat != null">
+				stat,
+			</if>
+			<if test="extend_1 != null">
+				extend_1,
+			</if>
+			<if test="extend_2 != null">
+				extend_2,
+			</if>
+			<if test="stream_type != null">
+				stream_type,
+			</if>
+			<if test="conn_type != null">
+				conn_type,
+			</if>
+			<if test="frame_height != null">
+				frame_height,
+			</if>
+			<if test="frame_width != null">
+				frame_width,
+			</if>
+			<if test="frame_rate != null">
+				frame_rate,
+			</if>
+			<if test="video_url != null">
+				video_url,
+			</if>
+			<if test="update_date != null">
+				update_date,
+			</if>
+		</trim>
+	</sql>
+
+	<!-- Column Value Empty Clause -->
+	<sql id="Column_Value_Empty_Clause">
+        <trim  suffixOverrides=",">
+			<if test="id != null">
+				#{id},
+			</if>
+			<if test="dev_id != null">
+				#{dev_id},
+			</if>
+			<if test="dev_nickname != null">
+				#{dev_nickname},
+			</if>
+			<if test="dev_company != null">
+				#{dev_company},
+			</if>
+			<if test="dev_ip != null">
+				#{dev_ip},
+			</if>
+			<if test="dev_port != null">
+				#{dev_port},
+			</if>
+			<if test="dev_username != null">
+				#{dev_username},
+			</if>
+			<if test="dev_password != null">
+				#{dev_password},
+			</if>
+			<if test="proxy_port != null">
+				#{proxy_port},
+			</if>
+			<if test="proxy_status != null">
+				#{proxy_status},
+			</if>
+			<if test="stat != null">
+				#{stat},
+			</if>
+			<if test="extend_1 != null">
+				#{extend_1},
+			</if>
+			<if test="extend_2 != null">
+				#{extend_2},
+			</if>
+			<if test="stream_type != null">
+				#{stream_type},
+			</if>
+			<if test="conn_type != null">
+				#{conn_type},
+			</if>
+			<if test="frame_height != null">
+				#{frame_height},
+			</if>
+			<if test="frame_width != null">
+				#{frame_width},
+			</if>
+			<if test="frame_rate != null">
+				#{frame_rate},
+			</if>
+			<if test="video_url != null">
+				#{video_url},
+			</if>
+			<if test="update_date != null">
+				#{update_date},
+			</if>
+		</trim>
+	</sql>
+
+	<!-- Setter Column Value Empty Clause -->
+	<sql id="Setter_Value_Empty_Clause">
+        <trim  suffixOverrides=",">
+            <if test="id != null">
+				id=#{id},
+            </if>
+            <if test="dev_id != null">
+				dev_id=#{dev_id},
+            </if>
+            <if test="dev_nickname != null">
+				dev_nickname=#{dev_nickname},
+            </if>
+            <if test="dev_company != null">
+				dev_company=#{dev_company},
+            </if>
+            <if test="dev_ip != null">
+				dev_ip=#{dev_ip},
+            </if>
+            <if test="dev_port != null">
+				dev_port=#{dev_port},
+            </if>
+            <if test="dev_username != null">
+				dev_username=#{dev_username},
+            </if>
+            <if test="dev_password != null">
+				dev_password=#{dev_password},
+            </if>
+            <if test="proxy_port != null">
+				proxy_port=#{proxy_port},
+            </if>
+            <if test="proxy_status != null">
+				proxy_status=#{proxy_status},
+            </if>
+            <if test="stat != null">
+				stat=#{stat},
+            </if>
+            <if test="extend_1 != null">
+				extend_1=#{extend_1},
+            </if>
+            <if test="extend_2 != null">
+				extend_2=#{extend_2},
+            </if>
+            <if test="stream_type != null">
+				stream_type=#{stream_type},
+            </if>
+            <if test="conn_type != null">
+				conn_type=#{conn_type},
+            </if>
+            <if test="frame_height != null">
+				frame_height=#{frame_height},
+            </if>
+            <if test="frame_width != null">
+				frame_width=#{frame_width},
+            </if>
+            <if test="frame_rate != null">
+				frame_rate=#{frame_rate},
+            </if>
+            <if test="video_url != null">
+				video_url=#{video_url},
+            </if>
+            <if test="update_date != null">
+				update_date=#{update_date},
+            </if>
+		</trim>
+	</sql>
+
+<!-- Mapping relation, table field, query condition and Sql block end. -->
+
+<!-- General CURD operation statement starts. -->
+    <!-- Insert Data -->
+	<insert id="addDeviceInfo" parameterType="Object">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into eag_devices_proxy(
+			<include refid="Column_Empty_Clause"></include>
+		)values(
+			<include refid="Column_Value_Empty_Clause"></include>
+		)
+	</insert>
+
+	<!-- Update Data By PrimaryKey -->
+	 <update id="update" parameterType="Object" >
+		 update eag_devices_proxy set
+			id=#{id},
+			dev_id=#{dev_id},
+			dev_nickname=#{dev_nickname},
+			dev_company=#{dev_company},
+			dev_ip=#{dev_ip},
+			dev_port=#{dev_port},
+			dev_username=#{dev_username},
+			dev_password=#{dev_password},
+			proxy_port=#{proxy_port},
+			proxy_status=#{proxy_status},
+			stat=#{stat},
+			extend_1=#{extend_1},
+			extend_2=#{extend_2},
+			stream_type=#{stream_type},
+			conn_type=#{conn_type},
+			frame_height=#{frame_height},
+			frame_width=#{frame_width},
+			frame_rate=#{frame_rate},
+			video_url=#{video_url},
+			update_date=#{update_date}
+		 where id=#{ id}
+	 </update>
+
+	 <!-- Modify Data, modify only empty fields. -->
+	<update id="editDeviceInfo" parameterType="Object" >
+		update eag_devices_proxy set
+		<include refid="Setter_Value_Empty_Clause"></include>
+		where id=#{id}
+	</update>
+
+	<!-- Delete Data by PrimaryKey -->
+	<delete id="deleteDeviceInfo" parameterType="Object">
+		delete from eag_devices_proxy where id=#{id}
+	</delete>
+
+	<!-- Query Data by PrimaryKey -->
+	<select id="getDeviceInfo"  resultMap="BaseResultMap" parameterType="Object">
+		select
+		<include refid="Base_Column_List"></include>
+		from eag_devices_proxy where id=#{id}
+	</select>
+
+	<!-- Query Data Count Number By Condition -->
+	<select id="queryDeviceInfoNumByCondition" resultType="java.lang.Integer"  parameterType="Object">
+		select count(1) from eag_devices_proxy
+		<include refid="Example_Where_Clause"></include>
+	</select>
+
+	<!-- Query Data List By Condition (Pagination) -->
+	<select id="queryDeviceInfoListByCondition" resultMap="BaseResultMap"  parameterType="Object">
+		select
+		<include refid="Base_Column_List"></include>
+		from eag_devices_proxy
+		<include refid="Example_Where_Clause"></include>
+		<!-- Pagination StartIndex and EndIndex -->
+        <if test="startIndex != null and startIndex != '' and endIndex != null and endIndex != ''">
+             limit ${startIndex},${endIndex}
+        </if>
+	</select>
+
+	<!-- Query Data List By Condition (NoPagination) -->
+	<select id="queryDeviceInfoListByConditionNoPage" resultMap="BaseResultMap"  parameterType="Object">
+		select
+		<include refid="Base_Column_List"></include>
+		from eag_devices_proxy
+		<include refid="Example_Where_Clause"></include>
+	</select>
+
+	<!-- Query All Data (Cautiously Use) -->
+	<select id="queryAllDeviceInfo" resultMap="BaseResultMap"  parameterType="Object">
+		select
+		<include refid="Base_Column_List"></include>
+		from eag_devices_proxy
+	</select>
+
+<!-- General CURD operation statement end. -->
+
+<!-- Custom Sql statement start. -->
+	<!-- Write here. -->
+<!-- Custom Sql statement start. -->
+</mapper>
