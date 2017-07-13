@@ -6,7 +6,7 @@ import indi.hjk.codemakerexample.entity.DeviceInfo;
 import org.apache.ibatis.session.RowBounds;
 
 /**
-* DeviceInfo Mapper
+* DeviceInfoController Mapper
 * Created by CoderMaker on 2017/01/16.
 */
 public interface DeviceInfoMapper {

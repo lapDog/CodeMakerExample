@@ -1,12 +1,14 @@
 package indi.hjk.codemakerexample.entity;
 
+import indi.hjk.codemakerexample.entity.common.BaseEntity;
+
 import java.io.Serializable;
 
 /**
- * DeviceInfo 实体类
+ * DeviceInfoController 实体类
  * Created by CoderMaker on 2017/01/16.
  */ 
-public class DeviceInfo implements Serializable {
+public class DeviceInfo extends BaseEntity implements Serializable {
     private Integer id; //  主键ID
     private String dev_id; //  设备ID
     private String dev_nickname; //  设备自定义名称

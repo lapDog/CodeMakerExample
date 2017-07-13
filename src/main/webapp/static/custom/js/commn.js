@@ -35,3 +35,15 @@ function bindLayDate(stId,etId) {
     laydate(lrsj_start);
     laydate(lrsj_end);
 }
+
+/*将表单转为POST请求参数
+ * @param formId 表单Id
+ */
+function getPostData(formId){
+    var formValuesArr = $("#"+formId).serializeArray();
+    var jsonObj={};
+    $(formValuesArr).each(function (index,item) {
+        jsonObj[item.name]=item.value;
+    });
+    return jsonObj;
+}
